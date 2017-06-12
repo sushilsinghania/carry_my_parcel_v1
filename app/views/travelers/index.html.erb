@@ -25,7 +25,7 @@
         <td><%= traveler.destination_id %></td>
         <td><%= traveler.acceptable_weight_lbs %></td>
         <td><%= traveler.expected_fee %></td>
-        <td><%= traveler.user_id %></td>
+        <td><%= traveler.user.email %></td>
         <td>
           <a href="/travelers/<%= traveler.id %>" class="btn btn-primary">Show</a>
           <a href="/travelers/<%= traveler.id %>/edit" class="btn btn-warning">Edit</a>

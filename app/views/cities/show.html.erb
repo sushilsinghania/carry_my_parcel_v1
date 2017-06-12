@@ -13,16 +13,24 @@
 
     </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/cities" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/cities/<%= @city.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_city/<%= @city.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
+    <iframe
+    width="300"
+    height="200"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD6AbhhyrzLT-_LqBrsFdgGc3iQNkht-L0
+    &q=<%= @city.city %>+<%= @city.country %>" allowfullscreen>
+  </iframe>
+
+  <div class="btn-group btn-group-justified">
+    <a href="/cities" class="btn btn-primary">
+      Back
+    </a>
+    <a href="/cities/<%= @city.id %>/edit" class="btn btn-warning">
+      Edit
+    </a>
+    <a href="/delete_city/<%= @city.id %>" class="btn btn-danger" rel="nofollow">
+      Delete
+    </a>
   </div>
+</div>
 </div>

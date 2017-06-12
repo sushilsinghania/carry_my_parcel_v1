@@ -6,10 +6,11 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @shipment.user_id %></dd>
+      <dd><%= @shipment.user.email %></dd>
 
       <dt>Photo</dt>
-      <dd><%= @shipment.photo %></dd>
+
+      <dd><img src="<%= @shipment.photo %>" width="75"></dd>
 
       <dt>Destination</dt>
       <dd><%= @shipment.destination_id %></dd>
@@ -25,16 +26,26 @@
 
     </dl>
 
+
+
+
     <div class="btn-group btn-group-justified">
       <a href="/shipments" class="btn btn-primary">
         Back
       </a>
+
+
       <a href="/shipments/<%= @shipment.id %>/edit" class="btn btn-warning">
         Edit
       </a>
+
+
+
       <a href="/delete_shipment/<%= @shipment.id %>" class="btn btn-danger" rel="nofollow">
         Delete
       </a>
+
+
     </div>
   </div>
 </div>
