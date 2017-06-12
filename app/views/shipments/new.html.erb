@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @shipment.errors.any? %>
+  <% @shipment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Shipment</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_shipment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @shipment.user_id %>">
+      </div>
+
+      <!-- Label and input for photo -->
+      <div class="form-group">
+        <label for="photo" class="control-label">
+          Photo
+        </label>
+
+        <input type="text" id="photo" name="photo" placeholder="Photo" class="form-control" value="<%= @shipment.photo %>">
+      </div>
+
+      <!-- Label and input for destination_id -->
+      <div class="form-group">
+        <label for="destination_id" class="control-label">
+          Destination
+        </label>
+
+        <input type="text" id="destination_id" name="destination_id" placeholder="Destination" class="form-control" value="<%= @shipment.destination_id %>">
+      </div>
+
+      <!-- Label and input for origin_id -->
+      <div class="form-group">
+        <label for="origin_id" class="control-label">
+          Origin
+        </label>
+
+        <input type="text" id="origin_id" name="origin_id" placeholder="Origin" class="form-control" value="<%= @shipment.origin_id %>">
+      </div>
+
+      <!-- Label and input for offer_price -->
+      <div class="form-group">
+        <label for="offer_price" class="control-label">
+          Offer price
+        </label>
+
+        <input type="text" id="offer_price" name="offer_price" placeholder="Offer price" class="form-control" value="<%= @shipment.offer_price %>">
+      </div>
+
+      <!-- Label and input for data_of_shipment -->
+      <div class="form-group">
+        <label for="data_of_shipment" class="control-label">
+          Data of shipment
+        </label>
+
+        <input type="text" id="data_of_shipment" name="data_of_shipment" placeholder="Data of shipment" class="form-control" value="<%= @shipment.data_of_shipment %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Shipment
+      </button>
+      or
+      <a href="/shipments">Cancel</a>
+    </form>
+  </div>
+</div>
