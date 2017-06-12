@@ -7,11 +7,16 @@ end
 
 gem 'bcrypt', platforms: :ruby
 
+#Java Query
+gem 'jquery-rails'
+
+#date picker gem
+gem 'bootstrap-datepicker-rails'
 
 gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
+
 gem 'devise'
 
-gem 'bcrypt', platforms: :ruby
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
