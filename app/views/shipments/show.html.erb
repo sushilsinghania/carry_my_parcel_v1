@@ -13,10 +13,20 @@
       <dd><img src="<%= @shipment.photo %>" width="75"></dd>
 
       <dt>Destination</dt>
-      <dd><%= @shipment.destination_id %></dd>
+      <!-- <dd><%= @shipment.destination_id %></dd> -->
+
+
+      <% id = @shipment.destination_id %>
+      <% dest_city = City.find_by( :id => id) %>
+      <dd><%= dest_city.city %></dd>
+
 
       <dt>Origin</dt>
-      <dd><%= @shipment.origin_id %></dd>
+      <!-- <dd><%= @shipment.origin_id %></dd> -->
+
+      <% id = @shipment.origin_id %>
+      <% origin_city = City.find_by( :id => id) %>
+      <dd><%= origin_city.city %></dd>
 
       <dt>Offer price</dt>
       <dd><%= @shipment.offer_price %></dd>

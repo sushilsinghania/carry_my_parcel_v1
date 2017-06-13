@@ -22,8 +22,21 @@
       <% @shipments.each do |shipment| %>
       <tr>
         <td><%= shipment.data_of_shipment %></td>
-        <td><%= shipment.origin_id %></td>
-        <td><%= shipment.destination_id %></td>
+
+        <!-- <td><%= shipment.origin_id %></td> -->
+
+        <% id = shipment.origin_id %>
+        <% origin_city = City.find_by( :id => id) %>
+        <td><%= origin_city.city %></td>
+
+
+
+        <!-- <td><%= shipment.destination_id %></td> -->
+
+        <% id = shipment.destination_id %>
+        <% dest_city = City.find_by( :id => id) %>
+        <td><%= dest_city.city %></td>
+
 
         <td><img src="<%= shipment.photo %>" width="75"></td>
 

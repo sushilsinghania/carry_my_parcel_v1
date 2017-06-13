@@ -9,10 +9,21 @@
       <dd><%= @traveler.date_of_travel %></dd>
 
       <dt>Origin</dt>
-      <dd><%= @traveler.origin_id %></dd>
+      <!-- <dd><%= @traveler.origin_id %></dd> -->
+
+      <% id = @traveler.origin_id %>
+      <% origin_city = City.find_by( :id => id) %>
+      <dd><%=  origin_city.city %></dd>
+
+
 
       <dt>Destination</dt>
-      <dd><%= @traveler.destination_id %></dd>
+      <!-- <dd><%= @traveler.destination_id %></dd> -->
+
+      <% id = @traveler.destination_id %>
+      <% dest_city = City.find_by( :id => id) %>
+      <dd><%= dest_city.city %></dd>
+
 
       <dt>Acceptable weight lbs</dt>
       <dd><%= @traveler.acceptable_weight_lbs %></dd>
@@ -24,6 +35,18 @@
       <dd><%= @traveler.user.email %></dd>
 
     </dl>
+
+    <iframe
+    width="300"
+    height="200"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/directions
+    ?key=AIzaSyCjEq4kJ3Z9eBSq9pcRbbnPwPDQLH_MOeM
+    &origin=chicago>
+    &destination=london
+    &avoid=tolls|highways" >
+    </iframe>
+
 
     <div class="btn-group btn-group-justified">
       <a href="/travelers" class="btn btn-primary">

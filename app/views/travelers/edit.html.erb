@@ -1,11 +1,11 @@
 <!-- Validation failure messages -->
 <% if @traveler.errors.any? %>
-  <% @traveler.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @traveler.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -36,7 +36,10 @@
           Origin
         </label>
 
-        <input type="text" id="origin_id" name="origin_id" placeholder="Origin" class="form-control" value="<%= @traveler.origin_id %>">
+        <!-- <input type="text" id="origin_id" name="origin_id" placeholder="Origin" class="form-control" value="<%= @traveler.origin_id %>"> -->
+
+        <%= select_tag("origin_id", options_from_collection_for_select(City.all, :id, :city), :class => "form-control") %>
+
       </div>
 
       <!-- Label and input for destination_id -->

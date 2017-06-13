@@ -21,8 +21,17 @@
       <% @travelers.each do |traveler| %>
       <tr>
         <td><%= traveler.date_of_travel %></td>
-        <td><%= traveler.origin_id %></td>
-        <td><%= traveler.destination_id %></td>
+
+        <% id = traveler.origin_id %>
+        <% origin_city = City.find_by( :id => id) %>
+        <td><%= origin_city.city %></td>
+
+        <!-- <td><%= traveler.destination_id %></td> -->
+        <% id = traveler.destination_id %>
+        <% dest_city = City.find_by( :id => id) %>
+        <td><%= dest_city.city %></td>
+
+
         <td><%= traveler.acceptable_weight_lbs %></td>
         <td><%= traveler.expected_fee %></td>
         <td><%= traveler.user.email %></td>
