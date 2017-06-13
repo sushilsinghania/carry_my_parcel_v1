@@ -66,10 +66,13 @@ class TravelersController < ApplicationController
 
     @traveler.destroy
 
+# redirect_to "/shipments", :notice => "Shipment deleted."
+
+
     if URI(request.referer).path == "/travelers/#{@traveler.id}"
       redirect_to("/", :notice => "Traveler deleted.")
     else
-      redirect_to(:back, :notice => "Traveler deleted.")
+      redirect_to( :back, :notice => "Traveler deleted.")
     end
   end
 end

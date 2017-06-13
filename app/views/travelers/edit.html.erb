@@ -24,8 +24,11 @@
           Date of travel
         </label>
 
-        <input type="text" id="date_of_travel" name="date_of_travel" placeholder="Date of travel" class="form-control" value="<%= @traveler.date_of_travel %>">
+        <input type="text" id="date_of_travel" data-provide='datepicker' name="date_of_travel" placeholder="Date of travel" class="form-control" value="<%= @traveler.date_of_travel %>">
       </div>
+
+
+
 
       <!-- Label and input for origin_id -->
       <div class="form-group">
